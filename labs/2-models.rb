@@ -21,7 +21,26 @@ Salesperson.destroy_all
 
 # 2. insert 1-2 rows in salespeople table.
 
+salesperson = Salespeople.new
+salesperson["first_name"] ="Ben"
+salesperson["last_name"] ="Block"
+salesperson["email"] ="Bentest@email.com"
+salesperson.save
+
+# as long as the file is alive, the value for this veriable will be stored.
+
+ben= Salespeople.find_by({"first_name"=>"Ben"})
+ben["email"] = "xxx@xxxx"
+ben.save
+
 # 3. write code to display how many salespeople rows are in the database
+puts "Salespeople:" #
+
+all_salespeople = Salesperson.all
+
+for zbra in all_salespeople 
+    puts "#{zbra["first_name]}"
+
 
 # ---------------------------------
 # Salespeople: 2
@@ -30,6 +49,8 @@ Salesperson.destroy_all
 
 # CHALLENGE:
 # 5. write code to display each salesperson's full name
+
+
 
 # ---------------------------------
 # Salespeople: 2

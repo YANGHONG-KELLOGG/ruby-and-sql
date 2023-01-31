@@ -17,17 +17,25 @@ Activity.destroy_all
 # 1. insert 3 rows in the activities table with relationships to
 # a single salesperson and 2 different contacts
 
+
+
 # 2. Display all the activities between the salesperson used above
 # and one of the contacts (sample output below):
+
+
 
 # ---------------------------------
 # Activities between Ben and Tim Cook:
 # - quick checkin over facetime
 # - met at Cupertino
 
+
+
 # CHALLENGE:
 # 3. Similar to above, but display all of the activities for the salesperson
 # across all contacts (sample output below):
+
+
 
 # ---------------------------------
 # Ben's Activities:
