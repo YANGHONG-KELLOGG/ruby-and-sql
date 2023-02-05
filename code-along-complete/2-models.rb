@@ -64,6 +64,7 @@ puts "companies: #{Company.all.count}" # companies: 3
 
 # All rows in companies table
 all_companies = Company.all
+puts all_companies
 puts all_companies.inspect
 
 # All rows in companies table where state is "CA"
@@ -99,3 +100,13 @@ twitter.destroy
 
 # How many rows are in the companies table?
 puts "companies: #{Company.all.count}" # companies: 2
+
+
+company1 = Company.where({"state" => "CA", "name" => "Apple"})
+puts company1.inspect
+
+company2 = Company.find_by({"state" => "CA", "name" => "Apple"})
+puts company2.inspect
+
+company3 = Company.where({"state" => "CA", "name" => "Apple"})[0]
+puts company3.inspect

@@ -21,25 +21,25 @@ Salesperson.destroy_all
 
 # 2. insert 1-2 rows in salespeople table.
 
-salesperson = Salespeople.new
-salesperson["first_name"] ="Ben"
-salesperson["last_name"] ="Block"
-salesperson["email"] ="Bentest@email.com"
+salesperson = Salesperson.new
+salesperson["first_name"] = "Benjamin"
+salesperson["last_name"] = "Block"
+salesperson["email"] = "ben@test.com"
+salesperson.save
+
+salesperson = Salesperson.new
+salesperson["first_name"] = "Brian"
+salesperson["last_name"] = "Eng"
+salesperson["email"] = "brian@test.com"
 salesperson.save
 
 # as long as the file is alive, the value for this veriable will be stored.
 
-ben= Salespeople.find_by({"first_name"=>"Ben"})
-ben["email"] = "xxx@xxxx"
-ben.save
 
 # 3. write code to display how many salespeople rows are in the database
-puts "Salespeople:" #
 
-all_salespeople = Salesperson.all
-
-for zbra in all_salespeople 
-    puts "#{zbra["first_name]}"
+puts "Salespeople: #{Salesperson.all.count}"
+puts "Salespeople: #{Salesperson.count}"
 
 
 # ---------------------------------
@@ -47,12 +47,30 @@ for zbra in all_salespeople
 
 # 4. modify/update column data for a row in the salespeople table.
 
+brian = Salesperson.find_by({"first_name"=>"Brian"})
+brian["email"] = "brian@kellogg.com"
+
+
 # CHALLENGE:
 # 5. write code to display each salesperson's full name
 
 
+all_salespeople = Salesperson.all
+
+for guys in all_salespeople 
+    puts "#{guys["first_name"]} #{guys["last_name"]}"
+end
 
 # ---------------------------------
 # Salespeople: 2
 # Ben Block
 # Brian Eng
+
+for salesperson1 in all_salespeople
+    # read the relevant columns from the salesperson row
+    first_name = salesperson1["first_name"]
+    last_name = salesperson1["last_name"]
+  
+    # display a string with the relevant columns
+    puts "#{first_name} #{last_name}"
+  end
