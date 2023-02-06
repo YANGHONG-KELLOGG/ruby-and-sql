@@ -110,3 +110,15 @@ puts company2.inspect
 
 company3 = Company.where({"state" => "CA", "name" => "Apple"})[0]
 puts company3.inspect
+
+# the above results are same, since only one company call Apple, 
+# the below results are different 
+
+company1 = Company.where({"state" => "CA"})
+puts company1.inspect
+
+company2 = Company.find_by({"state" => "CA"})
+puts company2.inspect
+
+company3 = Company.where({"state" => "CA"})[0]
+puts company3.inspect

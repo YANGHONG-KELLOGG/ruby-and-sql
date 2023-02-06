@@ -127,7 +127,7 @@ for activity in activities
 
   # query to find the company for this contact
   #company = Company.where({"id" => contact["company_id"]}) ---wrong, why ????
-
+# SINCE here we need a list of activities, not the first one
 
 
     # read the note column from the activity row
